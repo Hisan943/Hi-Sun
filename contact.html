@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="beranda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity
+    ="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+        <!--Container Navbar-->
+        <div class="container-navbar">
+            <h1>Hi,Sun Film</h1>
+            <ul class="ul-navbar">
+                <li class="li-navbar"><a href="index.html" class="link1">Home</a></li>
+                <li class="li-navbar"><a href="beranda.html" class="link1">Beranda</a></li>
+            </ul>
+        </div>
+    <!-- Container Contact-->
+    <div class="container-contact">
+    <h2>Contact Us</h2>
+    <div class="contact-content">
+        <div class="contact-info">
+            <h3>Hi,Sun Film</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Ciampea, Bogor, Jawa Barat</p>
+            <p><i class="fas fa-phone"></i> +62 857 1591 9818</p>
+            <p><i class="fas fa-envelope"></i>khoirootunhsn943@gmail.com</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/khoirootunhsn16?igsh=MXRyN2cyOGYxZ203Nw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/Hiiiroo04?t=Y_NWrmQLrVrspFZwKRictg&s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/@khoirootunhisan9500?si=2qOe8IpLAXTjDrQD" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="telegramForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+document.getElementById('telegramForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const botToken = '7398147580:AAETOkI5-OQLKxYbwK_68KMMSMilHFNBTrk'; // Ganti dengan token bot Anda
+  const chatId = '5714616020'; // Ganti dengan chat ID Anda
+  const text = `Pesan Baru!\nNama: ${this.nama.value}\nEmail: ${this.email.value}\nPesan: ${this.pesan.value}`;
+  
+  fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+    .then(response => alert('Pesan terkirim!'))
+    .catch(error => alert('Error: ' + error));
+});
+</script>
+</body>
+</html>
