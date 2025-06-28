@@ -37,13 +37,13 @@
             <h3>Send Us a Message</h3>
             <form id="telegramForm">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" id="nama" name="nama" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <textarea placeholder="Your Message" id="pesan" name="pesan" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -54,8 +54,8 @@
 document.getElementById('telegramForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
-  const botToken = '7398147580:AAETOkI5-OQLKxYbwK_68KMMSMilHFNBTrk'; // Ganti dengan token bot Anda
-  const chatId = '5714616020'; // Ganti dengan chat ID Anda
+  const botToken = '7979546397:AAHV9FIr7mBXPQKJSMSeUpspviRrVPBdRao'; // Ganti dengan token bot Anda
+  const chatId = '1321209889'; // Ganti dengan chat ID Anda
   const text = `Pesan Baru!\nNama: ${this.nama.value}\nEmail: ${this.email.value}\nPesan: ${this.pesan.value}`;
   
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
